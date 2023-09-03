@@ -1,26 +1,30 @@
-
-using AuctionService.Entities;
+﻿using AuctionService.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuctionService.Data;
 
-public class DbInitializer{
-
-    public static void InitDb(WebApplication app){
+public class DbInitializer
+{
+    public static void InitDb(WebApplication app)
+    {
         using var scope = app.Services.CreateScope();
 
-        SeedData(scope.ServiceProvider.GetService<AuctionDBContext>());
+        SeedData(scope.ServiceProvider.GetService<AuctionDbContext>());
     }
 
-    private static void SeedData(AuctionDBContext context)
+    private static void SeedData(AuctionDbContext context)
     {
         context.Database.Migrate();
-        if(context.Auctions.Any()){
-            Console.WriteLine("Already have data - No need to seed");
+
+        if (context.Auctions.Any())
+        {
+            Console.WriteLine("Already have data - no need to seed");
             return;
         }
 
-        var actions = new List<Auction>(){
+        var auctions = new List<Auction>()
+        {
+            // 1 Ford GT
             new Auction
             {
                 Id = Guid.Parse("afbee524-5972-4075-8800-7d1f9d7b0a0c"),
@@ -199,9 +203,9 @@ public class DbInitializer{
                 }
             }
         };
-        
-        context.AddRange(actions);
-        context.SaveChanges();
 
+        context.AddRange(auctions);
+
+        context.SaveChanges();
     }
 }
