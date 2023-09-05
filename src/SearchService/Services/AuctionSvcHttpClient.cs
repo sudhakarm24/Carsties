@@ -1,4 +1,4 @@
-using MongoDB.Entities;
+﻿using MongoDB.Entities;
 
 namespace SearchService;
 
@@ -6,6 +6,7 @@ public class AuctionSvcHttpClient
 {
     private readonly HttpClient _httpClient;
     private readonly IConfiguration _config;
+
     public AuctionSvcHttpClient(HttpClient httpClient, IConfiguration config)
     {
         _httpClient = httpClient;

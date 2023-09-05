@@ -2,7 +2,6 @@
 @model IdentityService.Pages.Login.Index
 
 <div class="login-page">
-
     <partial name="_ValidationSummary" />
 
     <div class="row">
@@ -40,7 +39,7 @@
                                 </div>
                             }
 
-                             <a class="pb-2 d-block" asp-page="../Register/Index" asp-route-returnUrl="@Model.Input.ReturnUrl">
+                            <a class="pb-2 d-block" asp-page="../Register/Index" asp-route-returnUrl="@Model.Input.ReturnUrl">
                                 New User? Register here
                             </a>
                             

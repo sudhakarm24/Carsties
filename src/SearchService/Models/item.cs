@@ -1,4 +1,4 @@
-using MongoDB.Entities;
+﻿using MongoDB.Entities;
 
 namespace SearchService;
 
