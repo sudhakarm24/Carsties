@@ -22,7 +22,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         context: "{{defaultContext}}"
-        file: src/IdentityService/Dockerfile
+        file: src/IdentityService/DockerFile
         push: true
-        tags: trycatchlearn/identity-svc:latest
+        tags: sudhakarm1990/identity-svc:latest
      
